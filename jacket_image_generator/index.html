@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        
+        .configurator {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .field {
+            margin-bottom: 12px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .field select {
+            width: 100%;
+            padding: 6px 8px;
+            font-size: 14px;
+        }
+
+        .preview-wrapper {
+            margin-top: 16px;
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 6px;
+            background: #fafafa;
+        }
+
+        .preview-title {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .preview {
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .preview img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="configurator">
+        <div class="field">
+            <label for="collar_select">Collar/Hood</label>
+            <select id="collar_select">
+                <option value="hood">Hood</option>
+                <option value="collar">Collar</option>
+                <option value="no_collar">None</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="cuff_select">Cuffs</label>
+            <select id="cuff_select">
+                <option value="no_cuff">Regular</option>
+                <option value="fitted">Fitted</option>
+                <option value="rolled">Rolled</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="length_select">Length</label>
+            <select id="length_select">
+                <option value="regular_length">Regular</option>
+                <option value="cropped">Cropped</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="shape_select">Shape</label>
+            <select id="shape_select">
+                <option value="rounded">Rounded</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+
+        <div class="preview-wrapper">
+            <div class="preview-title"> Live product preview</div>
+            <div class="preview">
+                <!-- These three images stack vertically to form one continuous product --> 
+                <img id="collar_img" src="" alt="Top portion"/>
+                <img id="cuff_img" spc="" alt="Middle portion" />
+                <img id="length_image" src="" alt="Bottom portion" />
+                <img id="shape_image" src="" alt="Bottom portion" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Map option values to actual image URLs
+        const IMAGE_MAP = {
+            hood: "",
+            collar: "",
+            no_collar: "",
+
+            no_cuff: "",
+            fitted: "",
+            rolled: "",
+
+            regular_length: "",
+            cropped: "",
+
+            rounded: "",
+            square:"",
+        }
+
+        const collar_select = document.getElementById("collar_select");
+        const cuff_select = document.getElementById("cuff_select");
+        const length_select = document.getElementById("length_select");
+        const shape_select = document.getElementById("shape_select");
+ 
+        const collar_img = document.getElementById("collar_img");
+        const cuff_img = document.getElementById("cuff_img");
+        const length_img = document.getElementById("length_img");
+        const shape_img = document.getElementById("shape_img");
+
+        function update_preview() {
+            const collar_val = collar_select.value;
+            const cuff_val = cuff_select.value;
+            const length_val = length_select.value;
+            const shape_val = shape_select.value;
+
+            collar_img.src = IMAGE_MAP[collar_val];
+            cuff_img.src = IMAGE_MAP[cuff_val];
+            length_img.src = IMAGE_MAP[length_val];
+            shape_img.src = IMAGE_MAP[shape_val];
+        }
+
+        // Initalize with default selections
+        collar_select.addEventListener("change", update_preview);
+        cuff_select.addEventListener("change", update_preview);
+        length_select.addEventListener("change", update_preview);
+        shape_select.addEventListener("change", update_preview);
+
+        // Trigger once on load
+        update_preview();
+    </script>
+</body>
+</html>
