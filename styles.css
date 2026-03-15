@@ -1,0 +1,241 @@
+
+@font-face {
+    font-family: quicksand;
+    src: url('assets/Quicksand-VariableFont_wght.ttf');
+}
+
+body {
+    font-family: quicksand;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: #5f7367;
+}
+
+h1, hr {
+    text-align: center;
+    color: #f8e4be;
+}
+
+h2 {
+    text-align: left;
+    color: #f8e4be;
+}
+
+.configurator {
+    width: min(100%, 52rem);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.config-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.preview-column,
+.fields-column {
+    flex: 1 1 18rem;
+    max-width: 48%;
+}
+
+.fields-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    margin-bottom: 0.75rem;
+}
+
+.field label {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+    color: #f5f3e8;
+}
+
+.field select {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    background-color: #f5f3e8;
+    color: #5f7367;
+}
+
+input[type="checkbox"] {
+    accent-color: #5f7367;
+}
+
+input[type="text"] {
+    width: 50%;
+    padding: 1rem;
+    font-size: 0.875rem;
+    background-color: #f5f3e8;
+}
+
+.preview-wrapper {
+    height: 100%;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    background: #fafafa;
+}
+
+.preview-title {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    color: #f8e4be;
+}
+
+.preview {
+    width: 100%;
+    overflow: hidden;
+}
+
+.preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.cover-image {
+    background-image: url('assets/Logos\ -\ Horizontal.png'); /* Specify the path to your image */
+    min-height: 30vh; /* Make the div at least the height of the viewport */
+    background-position: center; /* Center the image in the container */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Scale the image to cover the entire container */
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 48em) {
+    .config-columns {
+        flex-direction: column;
+    }
+
+    .preview-column,
+    .fields-column {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+p {
+    color: #f8e4be;
+    text-align: left;
+    font-size: medium;
+}
+
+.size-table {
+  width: fit-content;
+  border-collapse: collapse;
+  font-family: inherit;
+  color: #f8e4be; /* matches your site aesthetic */
+  background: transparent;
+}
+
+.size-table th,
+.size-table td {
+  border: 1px solid #f8e4be;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.size-table th {
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+a {
+    color: #f8e4be;
+}
+
+/* Hide the actual file input */
+#actual-btn {
+  opacity: 0; /* Makes it invisible but still functional */
+  position: absolute; /* Positions it over the label (alternative to `hidden` attribute) */
+  z-index: -1; /* Ensures it is behind the label visually */
+}
+
+/* Style the label to look like a button */
+.custom-button {
+  background-color: #f4f3ee;
+  color: #5f7367;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer; /* Makes it clickable */
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: small;
+}
+
+/* Optional: Add hover effect to the custom button */
+.custom-button:hover {
+    background-color: #dad8d1;
+}
+
+.rating {
+    --standard-radio-size: 1rem;
+    --star-size: calc(var(--standard-radio-size) * 2);
+    width: auto;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    unicode-bidi: bidi-override;
+    direction: ltr;
+    text-align: left;
+    position: relative;
+    font-size: 0; /* reset inherited text size */
+}
+
+.rating > label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: var(--star-size);
+    height: var(--star-size);
+    line-height: var(--star-size);
+    font-size: var(--star-size);
+    cursor: pointer;
+    color: #f8e4be;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #f8e4be;
+}
+
+.hide {
+  display: none;
+}
+
+.clear {
+  float: none;
+  clear: both;
+}
+
