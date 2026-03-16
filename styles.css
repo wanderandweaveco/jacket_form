@@ -179,6 +179,45 @@ a {
   font-size: small;
 }
 
+.loading-btn {
+  position: relative;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background: #f4f3ee;
+  color: #5f7367;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #5f7367;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none; /* hidden by default */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading .btn-text {
+  display: none;
+}
+
+.loading .spinner {
+  display: inline-block;
+}
+
+
 /* Optional: Add hover effect to the custom button */
 .custom-button:hover {
     background-color: #dad8d1;

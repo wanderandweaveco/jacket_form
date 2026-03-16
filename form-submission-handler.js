@@ -53,20 +53,25 @@
   function handleFormSubmit(event) {  // handles form submit without any jquery
     event.preventDefault();           // we are submitting via xhr below
     var form = event.target;
-    var formData = getFormData(form);
-    var data = formData.data;
+    var data = getFormData(form);
 
     // If a honeypot field is filled, assume it was done so by a spam bot.
-    if (formData.honeypot) {
+    if (data.honeypot) {
       return false;
     }
+
+    var formData = new FormData(form);
+
+    // Preserve the existing formDataNameOrder / sheet/email metadata for old backend compatibility
+    formData.set('formDataNameOrder', data.data.formDataNameOrder || '[]');
+    formData.set('formGoogleSheetName', data.data.formGoogleSheetName || 'responses');
+    formData.set('formGoogleSendEmail', data.data.formGoogleSendEmail || '');
 
     disableAllButtons(form);
     var url = form.action;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
-    // xhr.withCredentials = true;
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    // Do not set Content-Type manually; XHR will set multipart/form-data boundary
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset();
@@ -80,11 +85,7 @@
           }
         }
     };
-    // url encode form data for sending as post data
-    var encoded = Object.keys(data).map(function(k) {
-        return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-    }).join('&');
-    xhr.send(encoded);
+    xhr.send(formData);
   }
   
   function loaded() {

@@ -323,10 +323,17 @@
 
         <br/><br/><hr/>
 
-        <input type="submit" value="Submit" class="custom-button"/>
-        <!-- <label for="actual-btn" class="custom-button">Submit</label> -->
-
+        <button id="load-btn" class="loading-btn" onclick="on_submit()">
+            <span class="btn-text">Submit</span>
+            <span class="spinner"></span>
+        </button>
+        
     </form>
+    <br/><br/>
+
+
+    <!-- Thank you message (hidden by default) ----------------------------------------------------------->
+
 
     <div style="display:none" class="thankyou_message" id="thank_you_message">
         <!-- You can customize the thankyou message by editing the code below -->
@@ -444,6 +451,17 @@
 
             // Insert it directly below the last input
             wrapper.appendChild(clone);
+        }
+
+        function on_submit() {
+            const requiredFields = document.querySelectorAll('[required]');
+            for (let field of requiredFields) {
+                if (!field.value) {
+                    return;
+                }
+            }
+            const btn = document.getElementById("load-btn");
+            btn.classList.add('loading');
         }
 
     </script>
