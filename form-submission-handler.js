@@ -74,9 +74,9 @@
           if (formElement) {
             formElement.style.display = "none"; // hide form
           }
-          var thankYouMessage = form.querySelector(".thankyou_message");
-          if (thankYouMessage) {
-            thankYouMessage.style.display = "block";
+          var thankYouMessageById = document.getElementById("thank_you_message");
+          if (thankYouMessageById) {
+            thankYouMessageById.style.display = "block";
           }
         }
     };
