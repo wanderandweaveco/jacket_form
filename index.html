@@ -78,7 +78,7 @@
                             </select>
                         </div>
                         <label for="style_surprise" style="color: #f8e4be;">
-                            <input type="checkbox" id="style_surprise" name="style_surprise" value="true" onclick="show_msg('style_surprise', 'style_surprise_msg')">
+                            <input type="checkbox" id="style_surprise" name="style_surprise" value="false" onclick="show_msg('style_surprise', 'style_surprise_msg')">
                             Suprise me! 
                         </label>
                         <p id="style_surprise_msg" style="display:none">When this option is selected, the style of the jacket will be left up to the designer! (All style selections above will be ignored)</p>
@@ -393,9 +393,13 @@
             // If the checkbox is checked, display the output text
             if (checkBox.checked == true){
                 text.style.display = "block";
+                checkBox.value = "true";
             } else {
                 text.style.display = "none";
+                checkBox.value = "false"
             }
+            console.log("checkbox value: " + checkBox.value);
+
         }
 
         function handleFiles() {
@@ -437,6 +441,7 @@
 
             // Clear the cloned input’s value
             clone.value = "";
+            clone.id = "link_input_" + (currentInputs + 1); // Update the id for uniqueness
             clone.name = "link_input_" + (currentInputs + 1); // Update the name attribute for form submission
 
             // Insert it directly below the last input
