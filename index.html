@@ -258,20 +258,15 @@
         <br/><br/>
         <p>
             There are a few options for sharing your desired color palette and/or sources of inspiration. 
-            Upload one or several images of other jackets or color swatches you like. 
+            Send us (via email or text) one or several images of other jackets or color swatches you like. 
             Links are also accepted (online stores, Pinterest boards, etc.)! 
             Pre-made color palettes can be found <a href="https://colorpalettes.net" target="_blank">here</a> or you can generate your palette <a href="https://coolors.co" target="_blank">here</a>. 
         </p>
 
         <!-- <input type="checkbox" id="fileInput" value="true" onclick=""> -->
-        <input type="file" id="actual-btn" onchange="handleFiles()" multiple name="image_files[]"/>
-        <label for="actual-btn" class="custom-button">Choose File(s)</label>
-        <span id="file-chosen" style="color: #f8e4be;">   No file(s) chosen</span>
-        <ul id="fileList" style="color: #f8e4be;"></ul>
+        <button class="custom-button" onclick="openEmail()"> Email us your inspiration photos → </button>
+        <button class="custom-button" onclick="openText()"> Text us your inspiration photos → </button>
 
-        <p>
-            <i>If you are not able to upload all desired images due to size limits, additional images can be sent to wanderandweaveco@gmail.com!</i>
-        </p>
 
         <h2>Links</h2>
         <div id="answer-wrapper">
@@ -324,7 +319,7 @@
         <br/><br/><hr/>
 
         <button id="load-btn" class="loading-btn" onclick="on_submit()">
-            <span class="btn-text">Submit</span>
+            <span class="btn-text">Submit → </span>
             <span class="spinner"></span>
         </button>
         
@@ -407,27 +402,19 @@
             }
         }
 
-        function handleFiles() {
-
-            const fileListContainer = document.getElementById("fileList");
-            const actualBtn = document.getElementById('actual-btn');
-
-            // Clear the previous list, if any
-            fileListContainer.innerHTML = ""; 
-
-            const files = actualBtn.files; // The FileList object
-            if (files.length > 0) {
-                console.log(files.length);
-                const file_chose = document.getElementById("file-chosen");
-                file_chose.style.display = "none";
-            }
-            for (let i = 0; i < files.length; i++) {
-                const li = document.createElement("li");
-                li.textContent = files[i].name; // Get the file name
-                fileListContainer.appendChild(li);
-            }
+        function openEmail() {
+            const name = document.getElementById("name").value;
+            const to = "wanderandweaveco@gmail.com";
+            const subject = encodeURIComponent("Jacket Request Inspiration Photos");
+            const body = encodeURIComponent(`Hello,\n\n Here are the inspiration photos for my jacket request! \n\n ${name}`);
+            
+            window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
         }
 
+        function openText() {
+            const to = "+15152189316"; 
+            window.location.href = `sms:${to}`;
+        }
 
         function add_link_input() {
             const wrapper = document.getElementById("answer-wrapper");
