@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>`
+    <title>Wander & Weave Co. - Quilted Jacket Request</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://tally.so/widgets/embed.js"></script>
+    
+</head>
+<body>
+    <!-- <div class="cover-image"></div> -->
+    <iframe name="tally-form" data-tally-src="https://tally.so/embed/GxDRKp?transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="2285" frameborder="0" marginheight="0" marginwidth="0" title="Quilted Jacket Request Form"></iframe>
+
+    
+   <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const retrieved_name = urlParams.get("name");
+        const retrieved_collar_selection = urlParams.get("collar_select");
+        const retrieved_cuff_selection = urlParams.get("cuff_select");
+        const retrieved_length_selection = urlParams.get("length_select");
+        const retrieved_shape_selection = urlParams.get("shape_select");
+        const retrieved_style_surprise = urlParams.get("style_surprise");
+
+        const enc_name = encodeURIComponent(retrieved_name);
+        const enc_collar_selection = encodeURIComponent(retrieved_collar_selection);
+        const enc_cuff_selection = encodeURIComponent(retrieved_cuff_selection);
+        const enc_length_selection = encodeURIComponent(retrieved_length_selection);
+        const enc_shape_selection = encodeURIComponent(retrieved_shape_selection);
+        const enc_style_surprise = encodeURIComponent(retrieved_style_surprise);
+
+        Tally.loadEmbeds();
+
+
+        const iframe = document.getElementById("tally-form");
+
+        var url = `https://tally.so/embed/GxDRKp?name=${enc_name}&collar_select=${enc_collar_selection}&cuff_select=${enc_cuff_selection}&length_select=${enc_length_selection}&shape_select=${enc_shape_selection}&style_surprise=${enc_style_surprise}`;
+
+        Tally.loadEmbeds();
+        
+        iframe.src = url;
+
+   </script>
+</body>
+</html>

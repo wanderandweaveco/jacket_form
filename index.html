@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
+    <title>Wander & Weave Co. - Quilted Jacket Request</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="styles.css">
     
@@ -10,331 +11,87 @@
 
     <h1> Quilted Jacket Request Form</h1>
 
-    <form id="jacket_form" class="gform" method="POST" data-email="wanderandweaveco@gmail.com" action="https://script.google.com/macros/s/AKfycbxLypBpWQFd5FEgnQNI2CdqDa7ysuSf2H5VcCMWy0vvCmfCvjO_w8NLe_TgLj1x377TdQ/exec">
-
-        <!-- Name ------------------------------------------------------------------------ -->
+    <!-- Name ------------------------------------------------------------------------ -->
 
 
-        <br/><hr/>
-        <h2>Name (first and last)</h2>
-        <input type="text" id="name" name="name" placeholder="Your name here" style="color: #5f7367;" required/>
+    <br/><hr/>
+    <h2>Name (first and last)</h2>
+    <input type="text" id="name" name="name" placeholder="Your name here" style="color: #5f7367;" required/>
 
 
-        <!-- Customization ------------------------------------------------------------------------ -->
-        <br/><br/><hr/>
-    
-        <h2>Customize Your Jacket</h2>
-        <p>
-            The drawings pictured here are not necessarily to scale. Check out our Instagram (<a href="https://www.instagram.com/wanderandweaveco/" target="_blank">@wanderandweaveco</a>) for references! (all jackets currently on Instagram are "regular" length)
-        </p>
+    <!-- Customization ------------------------------------------------------------------------ -->
+    <br/><br/><hr/>
 
-        <div class="container">
-            <div class="configurator">
-                <div class="config-columns">
-                    <div class="preview-column">
-                        <div class="preview-wrapper">
-                            <div class="preview-title"> Live preview</div>
-                            <div class="preview">
-                                <img id="collar_img" src="" alt="Top portion"/>
-                                <img id="cuff_img" spc="" alt="Middle portion" />
-                                <img id="length_image" src="" alt="Bottom portion" />
-                                <img id="shape_image" src="" alt="Bottom portion" />
-                            </div>
+    <h2>Customize Your Jacket</h2>
+    <p>
+        The drawings pictured here are not necessarily to scale. Check out our Instagram (<a href="https://www.instagram.com/wanderandweaveco/" target="_blank">@wanderandweaveco</a>) for references! (all jackets currently on Instagram are "regular" length)
+    </p>
+
+    <div class="container">
+        <div class="configurator">
+            <div class="config-columns">
+                <div class="preview-column">
+                    <div class="preview-wrapper">
+                        <div class="preview-title"> Live preview</div>
+                        <div class="preview">
+                            <img id="collar_img" src="" alt="Top portion"/>
+                            <img id="cuff_img" spc="" alt="Middle portion" />
+                            <img id="length_image" src="" alt="Bottom portion" />
+                            <img id="shape_image" src="" alt="Bottom portion" />
                         </div>
                     </div>
+                </div>
 
-                    <div class="fields-column">
-                        <div class="field">
-                            <label for="collar_select">Collar/Hood</label>
-                            <select id="collar_select" name="collar_selection"required>
-                                <option value="hood">Hood</option>
-                                <option value="collar">Collar</option>
-                                <option value="no_collar">None</option>
-                            </select>
-                        </div>
-
-                        <div class="field">
-                            <label for="cuff_select">Cuffs</label>
-                            <select id="cuff_select" name="cuff_selection" required>
-                                <option value="no_cuff">Regular</option>
-                                <option value="fitted">Fitted</option>
-                                <option value="rolled">Rolled</option>
-                            </select>
-                        </div>
-
-                        <div class="field">
-                            <label for="length_select">Length</label>
-                            <select id="length_select" name="length_selection" required>
-                                <option value="regular_length">Regular</option>
-                                <option value="cropped">Cropped</option>
-                            </select>
-                        </div>
-
-                        <div class="field">
-                            <label for="shape_select">Shape</label>
-                            <select id="shape_select" name="shape_selection" required>
-                                <option value="rounded">Rounded</option>
-                                <option value="square">Square</option>
-                            </select>
-                        </div>
-                        <label for="style_surprise" style="color: #f8e4be;">
-                            <input type="checkbox" id="style_surprise" name="style_surprise" value="false" onclick="show_msg('style_surprise', 'style_surprise_msg')">
-                            Suprise me! 
-                        </label>
-                        <p id="style_surprise_msg" style="display:none">When this option is selected, the style of the jacket will be left up to the designer! (All style selections above will be ignored)</p>
+                <div class="fields-column">
+                    <div class="field">
+                        <label for="collar_select">Collar/Hood</label>
+                        <select id="collar_select" name="collar_selection"required>
+                            <option value="hood">Hood</option>
+                            <option value="collar">Collar</option>
+                            <option value="no_collar">None</option>
+                        </select>
                     </div>
+
+                    <div class="field">
+                        <label for="cuff_select">Cuffs</label>
+                        <select id="cuff_select" name="cuff_selection" required>
+                            <option value="no_cuff">Regular</option>
+                            <option value="fitted">Fitted</option>
+                            <option value="rolled">Rolled</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="length_select">Length</label>
+                        <select id="length_select" name="length_selection" required>
+                            <option value="regular_length">Regular</option>
+                            <option value="cropped">Cropped</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="shape_select">Shape</label>
+                        <select id="shape_select" name="shape_selection" required>
+                            <option value="rounded">Rounded</option>
+                            <option value="square">Square</option>
+                        </select>
+                    </div>
+                    <label for="style_surprise" style="color: #f8e4be;">
+                        <input type="checkbox" id="style_surprise" name="style_surprise" value="false" onclick="show_msg('style_surprise', 'style_surprise_msg')">
+                        Suprise me! 
+                    </label>
+                    <p id="style_surprise_msg" style="display:none">When this option is selected, the style of the jacket will be left up to the designer! (All style selections above will be ignored)</p>
                 </div>
             </div>
         </div>
-
-
-        <!-- Pockets ------------------------------------------------------------------------ -->
-
-
-        <br/><hr/>
-        <h2>Pockets</h2>
-        <div class="container">
-            <div class="configurator">
-                <div class="config-columns">
-                    <div class="preview-column">
-                        <figure>
-                            <img id="angled_pockets" src="assets/angled_pockets.jpeg" alt="Angled Pockets" style="width: 100%;"/>
-                            <figcaption style="color: #f8e4be; text-align: center;">Angled Pockets</figcaption>
-                        </figure>
-                    </div>
-                    <div class="preview-column">
-                        <figure>
-                            <img id="square_pockets" src="assets/square_pockets.jpeg" alt="Square Pockets" style="width:100%;"/>
-                            <figcaption style="color: #f8e4be; text-align: center;">Square Pockets</figcaption>
-                        </figure>
-                    </div>
-                    <div class="preview-column">
-                        <figure>
-                            <img id="side_pockets" src="assets/side_pockets.jpeg" alt="Side Pockets" style="width: 100%;"/>
-                            <figcaption style="color: #f8e4be; text-align: center;">Side Pockets</figcaption>
-                        </figure>
-                    </div>
-                    <div class="preview-column">
-                        <figure>
-                            <img id="inside_pockets" src="assets/inside_pockets.jpeg" alt="Inside Pockets" style="width: 100%;"/>
-                            <figcaption style="color: #f8e4be; text-align: center;">Inside Pockets</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br/><br/>
-        <div class="field" style="width: 30%;">
-            <label for="pocket_select">Shape</label>
-            <select id="pocket_select" name="pocket_selection" required>
-                <option value="" disabled selected hidden>-- Select an option --</option>
-                <option value="angled_pockets">Angled</option>
-                <option value="square_pockets">Square</option>
-                <option value="side_pockets">Side</option>
-                <option value="inside_pockets">Inside</option>
-                <option value="no_pockets">No Pockets</option>
-            </select>
-        </div>
-
-
-        <!-- Sizing ------------------------------------------------------------------------ -->
-
-
-        <br/><hr/>
-        <h2>Sizing</h2>
-        <p>
-            We want this jacket to be the perfect fit! If you don't see your size below or if you're in between sizes, let us know in the "Notes and Special Requests" section!
-        </p>
-        <div class="container">
-            <div class="configurator">
-                <div class="config-columns">
-                    <div class="preview-column">
-                        <img id="jacket_measurements" src="assets/jacket_measurements.jpeg" alt="jacket_measurements" style="width: 90%;"/>
-                    </div>
-                    <div class="preview-column">
-                        <div class="size-table-wrapper">
-                            <table class="size-table">
-                                <thead>
-                                    <tr>
-                                        <th>Size</th>
-                                        <th>Chest (in / cm)</th>
-                                        <th>Sleeve (in / cm)</th>
-                                        <th>Length (in / cm)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th>XS</th>
-                                    <td>44 / 111.8</td>
-                                    <td>21 / 53.3</td>
-                                    <td>29.5 / 74.9</td>
-                                </tr>
-                                <tr>
-                                    <th>S</th>
-                                    <td>46 / 116.8</td>
-                                    <td>22 / 55.9</td>
-                                    <td>30 / 76.2</td>
-                                </tr>
-                                <tr>
-                                    <th>M</th>
-                                    <td>48 / 121.9</td>
-                                    <td>23 / 58.4</td>
-                                    <td>30.5 / 77.5</td>
-                                </tr>
-                                <tr>
-                                    <th>L</th>
-                                    <td>50 / 127</td>
-                                    <td>24 / 61</td>
-                                    <td>31 / 78.7</td>
-                                </tr>
-                                <tr>
-                                    <th>XL</th>
-                                    <td>53 / 134.6</td>
-                                    <td>24.5 / 62.2</td>
-                                    <td>31.5 / 80</td>
-                                </tr>
-                                <tr>
-                                    <th>2XL</th>
-                                    <td>55 / 139.7</td>
-                                    <td>25 / 63.5</td>
-                                    <td>32 / 81.3</td>
-                                </tr>
-                                <tr>
-                                    <th>3XL</th>
-                                    <td>57 / 144.8</td>
-                                    <td>25.5 / 64.8</td>
-                                    <td>32.5 / 82.6</td>
-                                </tr>
-                                <tr>
-                                    <th>4XL</th>
-                                    <td>59 / 149.9</td>
-                                    <td>26 / 66</td>
-                                    <td>33 / 83.8</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br/><br/>
-        <div class="field" style="width: 30%;">
-            <label for="size">Size</label>
-            <select id="size_select" name="size_selection" required>
-                <option value="" disabled selected hidden>-- Select an option --</option>
-                <option value="extra_small">Extra Small</option>
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="extra_large">XL</option>
-                <option value="two_extra_large">2XL</option>
-                <option value="three_extra_large">3XL</option>
-                <option value="four_extra_large">4XL</option>
-            </select>
-        </div>
-        
-
-        <!-- Color Palette ------------------------------------------------------------------------ -->
-
-
-        <br/><hr/>
-        <h2>Color Palette and Inspiration</h2>
-        <label for="color_surprise" style="color: #f8e4be;">
-            <input type="checkbox" id="color_surprise" name="color_surprise" value="true" onclick="show_msg('color_surprise', 'color_surprise_msg')">
-            Suprise me! 
-        </label>
-        <p id="color_surprise_msg" style="display:none">When this option is selected, the colors used in your jacket will be left up to the designer!</p>
-
-        <br/><br/>
-        <label for="have_quilt" style="color: #f8e4be;">
-            <input type="checkbox" id="have_quilt" name="have_quilt" value="true" onclick="show_msg('have_quilt', 'have_quilt_msg')">
-            I've already found a quilt or fabric I want to use!
-        </label>
-        <p id="have_quilt_msg" style="display:none">That's great! The designer will message you personally to make arrangements!</p>
-
-        <br/><br/>
-        <p>
-            There are a few options for sharing your desired color palette and/or sources of inspiration. 
-            Send us (via email or text) one or several images of other jackets or color swatches you like. 
-            Links are also accepted (online stores, Pinterest boards, etc.)! 
-            Pre-made color palettes can be found <a href="https://colorpalettes.net" target="_blank">here</a> or you can generate your palette <a href="https://coolors.co" target="_blank">here</a>. 
-        </p>
-
-        <!-- <input type="checkbox" id="fileInput" value="true" onclick=""> -->
-        <button class="custom-button" onclick="openEmail()"> Email us your inspiration photos → </button>
-        <button class="custom-button" onclick="openText()"> Text us your inspiration photos → </button>
-
-
-        <h2>Links</h2>
-        <div id="answer-wrapper">
-            <input type="text" id="link_input" placeholder="Insert link here" style="color: #5f7367;" class="answer-input" name="link_input"/>
-        </div>
-        <button type="button" id="add-answer-btn" class="custom-button" onclick="add_link_input()">Add another link</button>
-        <br/>
-
-
-        <!-- Collaboration ------------------------------------------------------------------------ -->
-
-
-        <br/><hr/>
-        <h2>Collaboration</h2>
-
-        <p> <i>(Optional)</i></p>
-        <br/>
-        <p>There are 4-6 steps in the jacket-making process, depending on the choices you made above. How often would you like updates?</p>
-        <br/>
-        <p><i>1 - Let me know when it's done!</i></p>
-        <p><i>5 - Send me updates at every step!</i></p>
-        <br/>
-        <div class="rating">
-            <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
-            <label for="star5" >☆</label>
-            <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
-            <label for="star4" >☆</label>
-            <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
-            <label for="star3" >☆</label>
-            <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
-            <label for="star2" >☆</label>
-            <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
-            <label for="star1" >☆</label>
-            <div class="clear"></div>
-        </div>
-        <br/>
-
-
-
-        <!-- Collaboration ------------------------------------------------------------------------ -->
-
-
-        <br/><hr/>
-        <h2>Notes and Special Requests</h2>
-        <p><label for="notes" style="color:#f8e4be;">Notes and Special Requests</label></p>
-
-        <textarea id="notes" name="notes" rows="4" cols="100" style="background-color:#f5f3e8; color:#5f7367; max-width: 100%;"></textarea>
-
-
-        <br/><br/><hr/>
-
-        <button id="load-btn" class="loading-btn" onclick="on_submit()">
-            <span class="btn-text">Submit → </span>
-            <span class="spinner"></span>
-        </button>
-        
-    </form>
-    <br/><br/>
-
-
-    <!-- Thank you message (hidden by default) ----------------------------------------------------------->
-
-
-    <div style="display:none" class="thankyou_message" id="thank_you_message">
-        <!-- You can customize the thankyou message by editing the code below -->
-        <h2>Thanks for contacting us! We will get back to you soon!</h2>
-        <button type="button" onclick="location.reload()" class="custom-button">Submit Another Request →</button>
     </div>
+
+    <button id="load-btn" class="loading-btn" onclick="on_submit()">
+        <span class="btn-text">Next → </span>
+        <span class="spinner"></span>
+    </button>
+
+
 
     <script>
         // Map option values to actual image URLs 
@@ -354,6 +111,7 @@
             square:"",
         }
 
+        const name_input = document.getElementById("name");
         const collar_select = document.getElementById("collar_select");
         const cuff_select = document.getElementById("cuff_select");
         const length_select = document.getElementById("length_select");
@@ -364,19 +122,27 @@
         const length_img = document.getElementById("length_img");
         const shape_img = document.getElementById("shape_img");
 
+        var query_params = `?name=${name_input.value}&collar_select=${collar_select.value}&cuff_select=${cuff_select.value}&length_select=${length_select.value}&shape_select=${shape_select.value}&style_surprise=${document.getElementById("style_surprise").value}`;
+
+
         function update_preview() {
+            const name = name_input.value;
             const collar_val = collar_select.value;
             const cuff_val = cuff_select.value;
             const length_val = length_select.value;
             const shape_val = shape_select.value;
 
-            collar_img.src = IMAGE_MAP[collar_val];
-            cuff_img.src = IMAGE_MAP[cuff_val];
-            length_img.src = IMAGE_MAP[length_val];
-            shape_img.src = IMAGE_MAP[shape_val];
+            // collar_img.src = IMAGE_MAP[collar_val];
+            // cuff_img.src = IMAGE_MAP[cuff_val];
+            // length_img.src = IMAGE_MAP[length_val];
+            // shape_img.src = IMAGE_MAP[shape_val];
+
+            query_params = `?name=${name_input.value}&collar_select=${collar_select.value}&cuff_select=${cuff_select.value}&length_select=${length_select.value}&shape_select=${shape_select.value}&style_surprise=${document.getElementById("style_surprise").value}`;
+
         }
 
         // Initalize with default selections
+        name_input.addEventListener("change", update_preview);
         collar_select.addEventListener("change", update_preview);
         cuff_select.addEventListener("change", update_preview);
         length_select.addEventListener("change", update_preview);
@@ -384,6 +150,7 @@
 
         // Trigger once on load
         update_preview();
+
 
 
 
@@ -402,57 +169,13 @@
             }
         }
 
-        function openEmail() {
-            const name = document.getElementById("name").value;
-            const to = "wanderandweaveco@gmail.com";
-            const subject = encodeURIComponent("Jacket Request Inspiration Photos");
-            const body = encodeURIComponent(`Hello,\n\n Here are the inspiration photos for my jacket request! \n\n ${name}`);
-            
-            window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-        }
-
-        function openText() {
-            const to = "+15152189316"; 
-            window.location.href = `sms:${to}`;
-        }
-
-        function add_link_input() {
-            const wrapper = document.getElementById("answer-wrapper");
-
-            const currentInputs = wrapper.querySelectorAll(".answer-input").length;
-
-            if (currentInputs >= 5) {
-                const button = document.getElementById("add-answer-btn");
-                button.style.display = "none";
-            return;
-            }
-
-            // Clone the first input as a template
-            const original = wrapper.querySelector(".answer-input");
-            const clone = original.cloneNode(true);
-
-            // Clear the cloned input’s value
-            clone.value = "";
-            clone.id = "link_input_" + (currentInputs + 1); // Update the id for uniqueness
-            clone.name = "link_input_" + (currentInputs + 1); // Update the name attribute for form submission
-
-            // Insert it directly below the last input
-            wrapper.appendChild(clone);
-        }
 
         function on_submit() {
-            const requiredFields = document.querySelectorAll('[required]');
-            for (let field of requiredFields) {
-                if (!field.value) {
-                    return;
-                }
-            }
-            const btn = document.getElementById("load-btn");
-            btn.classList.add('loading');
+
+            window.location.href = "jacket_form.html" + query_params;
+            return false;
         }
 
     </script>
-
-    <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
 </body>
 </html>
